@@ -247,8 +247,8 @@ export default function HomePage() {
             className="absolute inset-0 w-full h-[120%]"
           >
             <Image
-              src="https://static.wixstatic.com/media/0d3405_6a4699f30ff245c2b5fa468d7d069157~mv2.png?originWidth=2048&originHeight=832"
-              alt="Artisanal workspace"
+              src="https://static.wixstatic.com/media/0d3405_1088b4b266374f699d4fe12a5240ea99~mv2.png?originWidth=2048&originHeight=704"
+              alt="Startup innovation ecosystem"
               width={2400}
               className="w-full h-full object-cover"
             />
