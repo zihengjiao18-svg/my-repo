@@ -77,34 +77,34 @@ export default function StartupsPage() {
   const hasActiveFilters = searchTerm || selectedCategory || selectedStage;
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
       
       {/* Page Header */}
-      <section className="w-full bg-secondary/10 py-16 lg:py-20">
+      <section className="w-full bg-gray-50 py-16 lg:py-20">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-16">
-          <h1 className="font-heading text-5xl lg:text-6xl text-primary mb-4">
+          <h1 className="font-heading text-5xl lg:text-6xl text-gray-900 mb-4">
             Explore Startups
           </h1>
-          <p className="font-paragraph text-lg lg:text-xl text-primary/70 max-w-3xl">
+          <p className="font-paragraph text-lg lg:text-xl text-gray-600 max-w-3xl">
             Browse our curated collection of innovative startups across various industries and stages
           </p>
         </div>
       </section>
 
       {/* Filters Section */}
-      <section className="w-full border-b border-buttonborder/20 bg-background sticky top-0 z-10 shadow-sm">
+      <section className="w-full border-b border-gray-200 bg-white sticky top-0 z-10 shadow-sm">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-16 py-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             {/* Search */}
             <div className="lg:col-span-5 relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/40 w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search by name, founder, or description..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-secondary/20 border border-buttonborder/30 font-paragraph text-base text-primary placeholder:text-primary/40 focus:outline-none focus:border-buttonborder transition-colors"
+                className="w-full pl-12 pr-4 py-3 bg-white border border-gray-300 font-paragraph text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-sky-500 transition-colors"
               />
             </div>
             
@@ -113,7 +113,7 @@ export default function StartupsPage() {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-4 py-3 bg-secondary/20 border border-buttonborder/30 font-paragraph text-base text-primary focus:outline-none focus:border-buttonborder transition-colors"
+                className="w-full px-4 py-3 bg-white border border-gray-300 font-paragraph text-base text-gray-900 focus:outline-none focus:border-sky-500 transition-colors"
               >
                 <option value="">All Categories</option>
                 {categories.map(cat => (
@@ -127,7 +127,7 @@ export default function StartupsPage() {
               <select
                 value={selectedStage}
                 onChange={(e) => setSelectedStage(e.target.value)}
-                className="w-full px-4 py-3 bg-secondary/20 border border-buttonborder/30 font-paragraph text-base text-primary focus:outline-none focus:border-buttonborder transition-colors"
+                className="w-full px-4 py-3 bg-white border border-gray-300 font-paragraph text-base text-gray-900 focus:outline-none focus:border-sky-500 transition-colors"
               >
                 <option value="">All Stages</option>
                 {stages.map(stage => (
@@ -141,7 +141,7 @@ export default function StartupsPage() {
               <div className="lg:col-span-1">
                 <button
                   onClick={clearFilters}
-                  className="w-full h-full px-4 py-3 border border-buttonborder/30 text-primary hover:bg-buttonborder hover:text-primary-foreground transition-colors flex items-center justify-center"
+                  className="w-full h-full px-4 py-3 border border-gray-300 text-gray-900 hover:bg-gray-100 transition-colors flex items-center justify-center"
                   title="Clear filters"
                 >
                   <X className="w-5 h-5" />
@@ -153,17 +153,17 @@ export default function StartupsPage() {
           {hasActiveFilters && (
             <div className="mt-4 flex flex-wrap gap-2">
               {searchTerm && (
-                <span className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/40 font-paragraph text-sm text-primary">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 font-paragraph text-sm text-gray-900">
                   Search: {searchTerm}
                 </span>
               )}
               {selectedCategory && (
-                <span className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/40 font-paragraph text-sm text-primary">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 font-paragraph text-sm text-gray-900">
                   Category: {selectedCategory}
                 </span>
               )}
               {selectedStage && (
-                <span className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/40 font-paragraph text-sm text-primary">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 font-paragraph text-sm text-gray-900">
                   Stage: {selectedStage}
                 </span>
               )}
@@ -185,48 +185,48 @@ export default function StartupsPage() {
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                 >
                   <Link to={`/startups/${startup._id}`}>
-                    <div className="bg-background border border-buttonborder/20 p-8 hover:border-buttonborder hover:shadow-lg transition-all h-full flex flex-col">
+                    <div className="bg-white border border-gray-200 p-8 hover:border-sky-500 hover:shadow-lg transition-all h-full flex flex-col">
                       <div className="flex items-start justify-between mb-4">
-                        <span className="inline-block px-3 py-1 bg-secondary/40 font-paragraph text-xs text-primary uppercase tracking-wider">
+                        <span className="inline-block px-3 py-1 bg-gray-100 font-paragraph text-xs text-gray-900 uppercase tracking-wider">
                           {startup.category}
                         </span>
-                        <span className="font-paragraph text-xs text-primary/60 uppercase">
+                        <span className="font-paragraph text-xs text-gray-600 uppercase">
                           {startup.stage}
                         </span>
                       </div>
                       
-                      <h3 className="font-heading text-2xl text-primary mb-2">
+                      <h3 className="font-heading text-2xl text-gray-900 mb-2">
                         {startup.startupName}
                       </h3>
                       
-                      <p className="font-paragraph text-sm text-primary/60 mb-4">
+                      <p className="font-paragraph text-sm text-gray-600 mb-4">
                         Founded by {startup.founderName}
                       </p>
                       
-                      <p className="font-paragraph text-base text-primary/80 mb-6 flex-grow line-clamp-3">
+                      <p className="font-paragraph text-base text-gray-700 mb-6 flex-grow line-clamp-3">
                         {startup.productServiceDescription}
                       </p>
                       
-                      <div className="space-y-2 pt-4 border-t border-buttonborder/20">
+                      <div className="space-y-2 pt-4 border-t border-gray-200">
                         {startup.monthlyRecurringRevenue !== undefined && startup.monthlyRecurringRevenue > 0 && (
                           <div className="flex justify-between items-center">
-                            <span className="font-paragraph text-sm text-primary/60">MRR</span>
-                            <span className="font-paragraph text-sm text-primary font-semibold">
+                            <span className="font-paragraph text-sm text-gray-600">MRR</span>
+                            <span className="font-paragraph text-sm text-gray-900 font-semibold">
                               ${startup.monthlyRecurringRevenue.toLocaleString()}
                             </span>
                           </div>
                         )}
                         {startup.numberOfUsers !== undefined && startup.numberOfUsers > 0 && (
                           <div className="flex justify-between items-center">
-                            <span className="font-paragraph text-sm text-primary/60">Users</span>
-                            <span className="font-paragraph text-sm text-primary font-semibold">
+                            <span className="font-paragraph text-sm text-gray-600">Users</span>
+                            <span className="font-paragraph text-sm text-gray-900 font-semibold">
                               {startup.numberOfUsers.toLocaleString()}
                             </span>
                           </div>
                         )}
                       </div>
                       
-                      <div className="flex items-center justify-end mt-4 text-linkcolor">
+                      <div className="flex items-center justify-end mt-4 text-sky-500">
                         <span className="font-paragraph text-sm mr-2">View Details</span>
                         <ArrowRight className="w-4 h-4" />
                       </div>
@@ -236,17 +236,17 @@ export default function StartupsPage() {
               ))
             ) : (
               <div className="col-span-full text-center py-20">
-                <Filter className="w-16 h-16 text-primary/20 mx-auto mb-4" />
-                <h3 className="font-heading text-2xl text-primary mb-2">
+                <Filter className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                <h3 className="font-heading text-2xl text-gray-900 mb-2">
                   No startups found
                 </h3>
-                <p className="font-paragraph text-base text-primary/60 mb-6">
+                <p className="font-paragraph text-base text-gray-600 mb-6">
                   Try adjusting your filters or search terms
                 </p>
                 {hasActiveFilters && (
                   <Button
                     onClick={clearFilters}
-                    className="border border-buttonborder text-primary hover:bg-buttonborder hover:text-primary-foreground"
+                    className="border border-gray-300 text-gray-900 hover:bg-gray-100"
                   >
                     Clear All Filters
                   </Button>
@@ -260,7 +260,7 @@ export default function StartupsPage() {
             <div className="text-center mt-12">
               <button
                 onClick={handleLoadMore}
-                className="inline-flex items-center gap-2 px-8 py-4 border border-buttonborder text-primary font-paragraph text-base hover:bg-buttonborder hover:text-primary-foreground transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-gray-300 text-gray-900 font-paragraph text-base hover:bg-gray-100 transition-colors"
               >
                 Load More Startups
                 <ArrowRight className="w-5 h-5" />

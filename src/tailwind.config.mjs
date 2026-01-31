@@ -23,17 +23,18 @@ export default {
                 paragraph: "madefor-display"
             },
             colors: {
-                footerbackground: '#0F0F0F',
-                linkcolor: '#60A5FA',
-                buttonborder: '#60A5FA',
-                foreground: '#E5E7EB',
+                footerbackground: '#1F2937',
+                linkcolor: '#0EA5E9',
+                buttonborder: '#0EA5E9',
+                foreground: '#1F2937',
                 destructive: '#EF4444',
                 destructiveforeground: '#FFFFFF',
-                background: '#1A1A1A',
-                secondary: '#3B82F6',
-                'secondary-foreground': '#F3F4F6',
-                'primary-foreground': '#1A1A1A',
-                primary: '#60A5FA'
+                background: '#FFFFFF',
+                secondary: '#F3F4F6',
+                'secondary-foreground': '#1F2937',
+                'primary-foreground': '#FFFFFF',
+                primary: '#1F2937',
+                accent: '#0EA5E9'
             },
         },
     },
