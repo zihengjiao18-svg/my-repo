@@ -18,7 +18,7 @@ export default function StartupsPage() {
   const [hasNext, setHasNext] = useState(false);
   const [skip, setSkip] = useState(0);
 
-  const categories = ['FinTech', 'HealthTech', 'AI', 'EdTech', 'Consumer Products'];
+  const categories = ['Technology', 'AI / Machine Learning', 'SaaS', 'FinTech', 'HealthTech', 'Consumer', 'EdTech', 'Enterprise / B2B', 'Mobility / Transportation', 'Sustainability / Climate'];
   const stages = ['Idea', 'MVP', 'Early Revenue', 'Growth', 'Scale'];
 
   useEffect(() => {

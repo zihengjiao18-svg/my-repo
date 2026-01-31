@@ -4,6 +4,27 @@
  */
 
 /**
+ * Collection ID: startupcategories
+ * Interface for StartupCategories
+ */
+export interface StartupCategories {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  categoryName?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType text */
+  slug?: string;
+  /** @wixFieldType number */
+  displayOrder?: number;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  categoryImage?: string;
+}
+
+
+/**
  * Collection ID: startups
  * Interface for Startups
  */

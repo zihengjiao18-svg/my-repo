@@ -6,7 +6,7 @@ export default function Header() {
       <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-4">
         <nav className="flex items-center justify-between">
           <Link to="/" className="font-heading text-xl lg:text-2xl text-primary font-semibold tracking-wide">
-            STARTUP VAULT
+            LEADIFYA
           </Link>
           <div className="flex items-center gap-6 lg:gap-10">
             <Link 

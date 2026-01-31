@@ -129,7 +129,7 @@ export default function HomePage() {
   const [startups, setStartups] = useState<Startups[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const categories = ['FinTech', 'HealthTech', 'AI', 'EdTech', 'Consumer Products'];
+  const categories = ['Technology', 'AI / Machine Learning', 'SaaS', 'FinTech', 'HealthTech', 'Consumer', 'EdTech', 'Enterprise / B2B', 'Mobility / Transportation', 'Sustainability / Climate'];
   const stages = ['Idea', 'MVP', 'Early Revenue', 'Growth', 'Scale'];
 
   // --- Effects ---
@@ -180,7 +180,7 @@ export default function HomePage() {
               className="flex flex-col items-start"
             >
               <h1 className="font-heading text-[12vw] leading-[0.85] text-primary tracking-tight mb-8">
-                CRAFTICO
+                LEADIFYA
               </h1>
               <div className="w-full flex flex-col lg:flex-row lg:items-end justify-between gap-12 border-t border-primary pt-8">
                 <p className="font-heading text-2xl md:text-4xl text-primary max-w-2xl leading-tight">
