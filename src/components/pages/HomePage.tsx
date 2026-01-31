@@ -24,7 +24,7 @@ interface StartupCardProps {
 
 const SectionDivider = () => (
   <div className="w-full flex justify-center py-12 opacity-20">
-    <div className="h-px w-full max-w-[120rem] bg-primary" />
+    <div className="h-px w-full max-w-[120rem] bg-gray-300" />
   </div>
 );
 
@@ -36,18 +36,18 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, index }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: index * 0.1, duration: 0.6 }}
-        className="relative h-full min-h-[240px] p-8 border border-primary/10 bg-background hover:bg-secondary/20 transition-colors duration-500 flex flex-col justify-between overflow-hidden"
+        className="relative h-full min-h-[240px] p-8 border border-gray-200 bg-white hover:bg-gray-50 transition-colors duration-500 flex flex-col justify-between overflow-hidden"
       >
         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <ArrowUpRight className="w-6 h-6 text-primary" />
+          <ArrowUpRight className="w-6 h-6 text-gray-900" />
         </div>
-        <span className="font-paragraph text-xs tracking-widest uppercase text-primary/60">
+        <span className="font-paragraph text-xs tracking-widest uppercase text-gray-500">
           Sector 0{index + 1}
         </span>
-        <h3 className="font-heading text-3xl text-primary mt-4 relative z-10">
+        <h3 className="font-heading text-3xl text-gray-900 mt-4 relative z-10">
           {category}
         </h3>
-        <div className="w-8 h-px bg-primary/20 group-hover:w-full transition-all duration-500 mt-auto" />
+        <div className="w-8 h-px bg-gray-300 group-hover:w-full transition-all duration-500 mt-auto" />
       </motion.div>
     </Link>
   );
@@ -61,11 +61,11 @@ const StartupCard: React.FC<StartupCardProps> = ({ startup, index }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="grid grid-cols-1 md:grid-cols-12 gap-0 border-t border-primary/20 group-hover:bg-secondary/10 transition-colors duration-500"
+        className="grid grid-cols-1 md:grid-cols-12 gap-0 border-t border-gray-200 group-hover:bg-gray-50 transition-colors duration-500"
       >
         {/* Image Column */}
-        <div className="md:col-span-4 lg:col-span-3 relative h-64 md:h-auto overflow-hidden border-r border-primary/10">
-          <div className="absolute inset-0 bg-secondary/20 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
+        <div className="md:col-span-4 lg:col-span-3 relative h-64 md:h-auto overflow-hidden border-r border-gray-200">
+          <div className="absolute inset-0 bg-gray-100 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
           <Image
             src="https://static.wixstatic.com/media/0d3405_4dc4fe4df66b4b5eb59b642e2d7eeee9~mv2.png?originWidth=576&originHeight=384"
             alt={startup.startupName || 'Startup'}
@@ -77,41 +77,41 @@ const StartupCard: React.FC<StartupCardProps> = ({ startup, index }) => {
         {/* Content Column */}
         <div className="md:col-span-8 lg:col-span-9 p-8 md:p-12 flex flex-col justify-between relative">
           <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
-            <ArrowRight className="w-8 h-8 text-primary" />
+            <ArrowRight className="w-8 h-8 text-gray-900" />
           </div>
 
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <span className="px-3 py-1 border border-primary/20 rounded-full text-xs font-paragraph uppercase tracking-wider text-primary/80">
+              <span className="px-3 py-1 border border-gray-300 rounded-full text-xs font-paragraph uppercase tracking-wider text-gray-700">
                 {startup.category}
               </span>
-              <span className="text-xs font-paragraph uppercase tracking-wider text-primary/60">
+              <span className="text-xs font-paragraph uppercase tracking-wider text-gray-500">
                 {startup.stage}
               </span>
             </div>
-            <h3 className="font-heading text-4xl md:text-5xl text-primary mb-4 group-hover:text-linkcolor transition-colors">
+            <h3 className="font-heading text-4xl md:text-5xl text-gray-900 mb-4 group-hover:text-gray-700 transition-colors">
               {startup.startupName}
             </h3>
-            <p className="font-paragraph text-lg text-primary/70 max-w-2xl line-clamp-2">
+            <p className="font-paragraph text-lg text-gray-600 max-w-2xl line-clamp-2">
               {startup.productServiceDescription}
             </p>
           </div>
 
-          <div className="mt-8 flex items-center gap-8 pt-8 border-t border-primary/10">
+          <div className="mt-8 flex items-center gap-8 pt-8 border-t border-gray-200">
             <div className="flex flex-col">
-              <span className="text-xs uppercase tracking-widest text-primary/40 mb-1">Founder</span>
-              <span className="font-heading text-lg text-primary">{startup.founderName}</span>
+              <span className="text-xs uppercase tracking-widest text-gray-400 mb-1">Founder</span>
+              <span className="font-heading text-lg text-gray-900">{startup.founderName}</span>
             </div>
             {(startup.monthlyRecurringRevenue || 0) > 0 && (
               <div className="flex flex-col">
-                <span className="text-xs uppercase tracking-widest text-primary/40 mb-1">MRR</span>
-                <span className="font-heading text-lg text-primary">${startup.monthlyRecurringRevenue?.toLocaleString()}</span>
+                <span className="text-xs uppercase tracking-widest text-gray-400 mb-1">MRR</span>
+                <span className="font-heading text-lg text-gray-900">${startup.monthlyRecurringRevenue?.toLocaleString()}</span>
               </div>
             )}
              {(startup.numberOfUsers || 0) > 0 && (
               <div className="flex flex-col">
-                <span className="text-xs uppercase tracking-widest text-primary/40 mb-1">Users</span>
-                <span className="font-heading text-lg text-primary">{startup.numberOfUsers?.toLocaleString()}</span>
+                <span className="text-xs uppercase tracking-widest text-gray-400 mb-1">Users</span>
+                <span className="font-heading text-lg text-gray-900">{startup.numberOfUsers?.toLocaleString()}</span>
               </div>
             )}
           </div>
@@ -167,43 +167,43 @@ export default function HomePage() {
   const heroTextOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-background flex flex-col overflow-x-hidden selection:bg-primary selection:text-background">
+    <div ref={containerRef} className="min-h-screen bg-white flex flex-col overflow-x-hidden selection:bg-gray-900 selection:text-white">
       <Header />
 
       {/* --- HERO SECTION --- */}
       <section className="relative w-full flex flex-col">
         {/* Top Half: Typography & Search */}
-        <div className="w-full bg-background pt-32 pb-16 md:pt-48 md:pb-24 px-6 md:px-12 lg:px-24 z-10 relative">
+        <div className="w-full bg-white pt-32 pb-16 md:pt-48 md:pb-24 px-6 md:px-12 lg:px-24 z-10 relative">
           <div className="max-w-[120rem] mx-auto">
             <motion.div 
               style={{ opacity: heroTextOpacity }}
               className="flex flex-col items-start"
             >
-              <h1 className="font-heading text-[12vw] leading-[0.85] text-primary tracking-tight mb-8">
+              <h1 className="font-heading text-[12vw] leading-[0.85] text-gray-900 tracking-tight mb-8">
                 LEADIFYA
               </h1>
-              <div className="w-full flex flex-col lg:flex-row lg:items-end justify-between gap-12 border-t border-primary pt-8">
-                <p className="font-heading text-2xl md:text-4xl text-primary max-w-2xl leading-tight">
+              <div className="w-full flex flex-col lg:flex-row lg:items-end justify-between gap-12 border-t border-gray-300 pt-8">
+                <p className="font-heading text-2xl md:text-4xl text-gray-900 max-w-2xl leading-tight">
                   A curated database of startups for VCs to explore key metrics and connect with founders.
                 </p>
                 
                 {/* Search Interface */}
                 <div className="w-full lg:w-auto flex flex-col md:flex-row gap-4 items-stretch">
                   <div className="relative group">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/40 w-5 h-5 group-focus-within:text-primary transition-colors" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 group-focus-within:text-gray-900 transition-colors" />
                     <input
                       type="text"
                       placeholder="Search startups..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full md:w-80 pl-12 pr-4 py-4 bg-transparent border border-primary/20 font-paragraph text-primary placeholder:text-primary/40 focus:outline-none focus:border-primary focus:bg-secondary/10 transition-all"
+                      className="w-full md:w-80 pl-12 pr-4 py-4 bg-white border border-gray-300 font-paragraph text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-900 focus:bg-gray-50 transition-all"
                     />
                   </div>
                   <div className="flex gap-4">
                     <select
                       value={selectedCategory}
                       onChange={(e) => setSelectedCategory(e.target.value)}
-                      className="px-6 py-4 bg-transparent border border-primary/20 font-paragraph text-primary focus:outline-none focus:border-primary focus:bg-secondary/10 transition-all cursor-pointer appearance-none min-w-[160px]"
+                      className="px-6 py-4 bg-white border border-gray-300 font-paragraph text-gray-900 focus:outline-none focus:border-gray-900 focus:bg-gray-50 transition-all cursor-pointer appearance-none min-w-[160px]"
                     >
                       <option value="">Category</option>
                       {categories.map(cat => (
@@ -212,7 +212,7 @@ export default function HomePage() {
                     </select>
                     <button
                       onClick={handleSearch}
-                      className="px-8 py-4 bg-primary text-primary-foreground font-paragraph hover:bg-primary/90 transition-colors flex items-center justify-center"
+                      className="px-8 py-4 bg-gray-900 text-white font-paragraph hover:bg-gray-800 transition-colors flex items-center justify-center"
                     >
                       <ArrowRight className="w-5 h-5" />
                     </button>
@@ -235,19 +235,19 @@ export default function HomePage() {
               width={2400}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
           </motion.div>
         </div>
       </section>
 
       {/* --- TICKER SECTION --- */}
-      <div className="w-full border-y border-primary/10 bg-secondary/10 py-6 overflow-hidden">
+      <div className="w-full border-y border-gray-200 bg-gray-50 py-6 overflow-hidden">
         <div className="flex whitespace-nowrap animate-marquee">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center gap-12 mx-6">
               {categories.map((cat) => (
-                <span key={cat} className="font-heading text-xl md:text-2xl text-primary/60 uppercase tracking-widest flex items-center gap-12">
-                  {cat} <span className="w-2 h-2 rounded-full bg-primary/40" />
+                <span key={cat} className="font-heading text-xl md:text-2xl text-gray-400 uppercase tracking-widest flex items-center gap-12">
+                  {cat} <span className="w-2 h-2 rounded-full bg-gray-300" />
                 </span>
               ))}
             </div>
@@ -265,18 +265,18 @@ export default function HomePage() {
       </div>
 
       {/* --- MANIFESTO / VISION SECTION (Sticky) --- */}
-      <section className="w-full py-32 px-6 md:px-12 lg:px-24 bg-background">
+      <section className="w-full py-32 px-6 md:px-12 lg:px-24 bg-white">
         <div className="max-w-[120rem] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <div className="sticky top-32">
-                <span className="block font-paragraph text-xs uppercase tracking-[0.2em] text-primary/60 mb-6">
+                <span className="block font-paragraph text-xs uppercase tracking-[0.2em] text-gray-500 mb-6">
                   The Philosophy
                 </span>
-                <h2 className="font-heading text-5xl md:text-6xl text-primary leading-none mb-8">
+                <h2 className="font-heading text-5xl md:text-6xl text-gray-900 leading-none mb-8">
                   Artisanal<br />Intelligence.
                 </h2>
-                <p className="font-paragraph text-lg text-primary/70 max-w-sm">
+                <p className="font-paragraph text-lg text-gray-600 max-w-sm">
                   We believe that finding the next unicorn is an art form. We curate data with the precision of a craftsman.
                 </p>
               </div>
@@ -293,14 +293,14 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8 }}
-                  className="flex flex-col md:flex-row gap-8 items-start border-b border-primary/10 pb-16"
+                  className="flex flex-col md:flex-row gap-8 items-start border-b border-gray-200 pb-16"
                 >
-                  <div className="w-16 h-16 rounded-full bg-secondary/30 flex items-center justify-center shrink-0">
-                    <item.icon className="w-8 h-8 text-primary" />
+                  <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                    <item.icon className="w-8 h-8 text-gray-900" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-3xl text-primary mb-4">{item.title}</h3>
-                    <p className="font-paragraph text-xl text-primary/60 max-w-xl">{item.text}</p>
+                    <h3 className="font-heading text-3xl text-gray-900 mb-4">{item.title}</h3>
+                    <p className="font-paragraph text-xl text-gray-600 max-w-xl">{item.text}</p>
                   </div>
                 </motion.div>
               ))}
@@ -310,20 +310,20 @@ export default function HomePage() {
       </section>
 
       {/* --- FEATURED STARTUPS (The Collection) --- */}
-      <section className="w-full py-24 bg-background relative">
+      <section className="w-full py-24 bg-white relative">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div>
-              <span className="block font-paragraph text-xs uppercase tracking-[0.2em] text-primary/60 mb-4">
+              <span className="block font-paragraph text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">
                 The Collection
               </span>
-              <h2 className="font-heading text-5xl md:text-7xl text-primary">
+              <h2 className="font-heading text-5xl md:text-7xl text-gray-900">
                 Featured Startups
               </h2>
             </div>
             <Link 
               to="/startups" 
-              className="hidden md:flex items-center gap-2 text-primary hover:text-primary/70 transition-colors font-paragraph uppercase tracking-widest text-sm border-b border-primary pb-1"
+              className="hidden md:flex items-center gap-2 text-gray-900 hover:text-gray-600 transition-colors font-paragraph uppercase tracking-widest text-sm border-b border-gray-900 pb-1"
             >
               View Full Database <ArrowRight className="w-4 h-4" />
             </Link>
@@ -331,16 +331,16 @@ export default function HomePage() {
 
           <div className="flex flex-col w-full">
             {isLoading ? (
-              <div className="w-full h-96 flex items-center justify-center border border-primary/10 bg-secondary/5">
-                <div className="animate-pulse font-heading text-2xl text-primary/40">Loading Collection...</div>
+              <div className="w-full h-96 flex items-center justify-center border border-gray-200 bg-gray-50">
+                <div className="animate-pulse font-heading text-2xl text-gray-400">Loading Collection...</div>
               </div>
             ) : startups.length > 0 ? (
               startups.map((startup, index) => (
                 <StartupCard key={startup._id} startup={startup} index={index} />
               ))
             ) : (
-              <div className="w-full py-32 text-center border border-primary/10">
-                <p className="font-paragraph text-primary/60">No startups currently available.</p>
+              <div className="w-full py-32 text-center border border-gray-200">
+                <p className="font-paragraph text-gray-500">No startups currently available.</p>
               </div>
             )}
           </div>
@@ -348,7 +348,7 @@ export default function HomePage() {
           <div className="mt-16 md:hidden flex justify-center">
             <Link 
               to="/startups" 
-              className="flex items-center gap-2 text-primary font-paragraph uppercase tracking-widest text-sm border-b border-primary pb-1"
+              className="flex items-center gap-2 text-gray-900 font-paragraph uppercase tracking-widest text-sm border-b border-gray-900 pb-1"
             >
               View Full Database <ArrowRight className="w-4 h-4" />
             </Link>
@@ -357,16 +357,16 @@ export default function HomePage() {
       </section>
 
       {/* --- CATEGORIES GRID --- */}
-      <section className="w-full py-32 bg-secondary/10">
+      <section className="w-full py-32 bg-gray-50">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <div className="text-center mb-20">
-            <h2 className="font-heading text-4xl md:text-5xl text-primary mb-6">Curated Sectors</h2>
-            <p className="font-paragraph text-lg text-primary/70">Explore innovation by industry vertical.</p>
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">Curated Sectors</h2>
+            <p className="font-paragraph text-lg text-gray-600">Explore innovation by industry vertical.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-px bg-primary/10 border border-primary/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-px bg-gray-200 border border-gray-200">
             {categories.map((category, index) => (
-              <div key={category} className="bg-background">
+              <div key={category} className="bg-white">
                 <CategoryCard category={category} index={index} />
               </div>
             ))}
@@ -375,7 +375,7 @@ export default function HomePage() {
       </section>
 
       {/* --- CTA SECTION --- */}
-      <section className="w-full py-40 px-6 md:px-12 lg:px-24 bg-primary text-primary-foreground relative overflow-hidden">
+      <section className="w-full py-40 px-6 md:px-12 lg:px-24 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
            <Image
               src="https://static.wixstatic.com/media/0d3405_38dbbe6963ab4334b8bfdbaafda14f8a~mv2.png?originWidth=1920&originHeight=1024"
@@ -399,7 +399,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-paragraph text-xl md:text-2xl text-primary-foreground/80 mb-12"
+            className="font-paragraph text-xl md:text-2xl text-white/80 mb-12"
           >
             Join the network of visionaries and craftsmen building tomorrow's world.
           </motion.p>
@@ -411,7 +411,7 @@ export default function HomePage() {
           >
             <Link
               to="/contact"
-              className="inline-flex items-center gap-4 px-12 py-6 bg-background text-primary font-heading text-xl hover:bg-secondary transition-colors duration-300"
+              className="inline-flex items-center gap-4 px-12 py-6 bg-white text-gray-900 font-heading text-xl hover:bg-gray-100 transition-colors duration-300"
             >
               Get in Touch <ArrowRight className="w-6 h-6" />
             </Link>
