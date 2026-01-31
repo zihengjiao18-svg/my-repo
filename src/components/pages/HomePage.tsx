@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { Startups } from '@/entities';
+import { format } from 'date-fns';
 
 // --- Types ---
 interface CategoryCardProps {
@@ -54,6 +55,8 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, index }) => {
 };
 
 const StartupCard: React.FC<StartupCardProps> = ({ startup, index }) => {
+  const reviewDate = startup.reviewDate ? new Date(startup.reviewDate) : null;
+  
   return (
     <Link to={`/startups/${startup._id}`} className="group block w-full">
       <motion.div
@@ -88,6 +91,11 @@ const StartupCard: React.FC<StartupCardProps> = ({ startup, index }) => {
               <span className="text-xs font-paragraph uppercase tracking-wider text-gray-500">
                 {startup.stage}
               </span>
+              {reviewDate && (
+                <span className="text-xs font-paragraph uppercase tracking-wider text-gray-500">
+                  Reviewed {format(reviewDate, 'MMM d, yyyy')}
+                </span>
+              )}
             </div>
             <h3 className="font-heading text-4xl md:text-5xl text-gray-900 mb-4 group-hover:text-gray-700 transition-colors">
               {startup.startupName}
@@ -137,8 +145,17 @@ export default function HomePage() {
     const loadStartups = async () => {
       setIsLoading(true);
       try {
-        const result = await BaseCrudService.getAll<Startups>('startups', {}, { limit: 6 });
-        setStartups(result.items);
+        const result = await BaseCrudService.getAll<Startups>('startups', {}, { limit: 50 });
+        // Sort by reviewDate descending and take only the 5 newest
+        const sorted = result.items
+          .filter(s => s.reviewDate) // Only include startups with review dates
+          .sort((a, b) => {
+            const dateA = a.reviewDate ? new Date(a.reviewDate).getTime() : 0;
+            const dateB = b.reviewDate ? new Date(b.reviewDate).getTime() : 0;
+            return dateB - dateA;
+          })
+          .slice(0, 5);
+        setStartups(sorted);
       } catch (error) {
         console.error('Error loading startups:', error);
       } finally {
@@ -283,7 +300,7 @@ export default function HomePage() {
             </div>
             <div className="lg:col-span-8 space-y-24">
               {[
-                { icon: Activity, title: "Verified Metrics", text: "Every data point is rigorously checked. No estimates, only facts." },
+                { icon: Activity, title: "First-Hand Research", text: "Every startup is personally interviewed and researched. We capture authentic insights directly from founders." },
                 { icon: Users, title: "Founder Access", text: "Direct lines to the visionaries building the future." },
                 { icon: TrendingUp, title: "Growth Signals", text: "Identify momentum before the market catches on." }
               ].map((item, idx) => (

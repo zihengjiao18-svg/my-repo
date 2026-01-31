@@ -32,6 +32,8 @@ export interface Startups {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
+  /** @wixFieldType date */
+  reviewDate?: Date | string;
   /** @wixFieldType text */
   startupName?: string;
   /** @wixFieldType text */
